@@ -87,3 +87,8 @@ load dataset
 ```bash
 python scripts/3_ingestion_script.py
 ```
+
+
+## Model monitoring Dashboard
+![dashboard](./images/Screenshot_20241008_200906.png)
+![dashboard](./images/Screenshot_20241008_200928.png)
