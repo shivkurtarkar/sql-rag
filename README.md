@@ -104,7 +104,7 @@ start application
 ```bash
 cd app/
 pip install -r requirements.txt
-stremlit run rag_streamlit_app.py
+streamlit run rag_streamlit_app.py
 ```
 
 ## Model monitoring Dashboard
