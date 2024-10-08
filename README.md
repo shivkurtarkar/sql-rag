@@ -89,6 +89,28 @@ python scripts/3_ingestion_script.py
 ```
 
 
+evaluate retrival
+```bash
+python scripts/4_evaluate_retrival.py
+```
+
+evaluate rag
+```bash
+python scripts/5_generate_rag_responses.py
+python scripts/6_evaluate_rag_responses_llm_judge.py
+```
+
+start application
+```bash
+cd app/
+pip install -r requirements.txt
+stremlit run rag_streamlit_app.py
+```
+
 ## Model monitoring Dashboard
 ![dashboard](./images/Screenshot_20241008_200906.png)
 ![dashboard](./images/Screenshot_20241008_200928.png)
+
+
+## applicaiton
+![applicaiton](./images/Screenshot_20241008_200928.png)
