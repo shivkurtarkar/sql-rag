@@ -1,0 +1,11 @@
+apiVersion: 1
+
+datasources:
+  - name: DS_SQLITE
+    type: 'frser-sqlite-datasource'
+    access: proxy
+    editable: true
+    isDefault: true
+    jsonData:
+      path: /app/data/feedback.db
+      
