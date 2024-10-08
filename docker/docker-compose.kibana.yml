@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.4.2
+    container_name: kib01
+    environment:
+      XPACK_APM_SERVICEMAPENABLED: "true"
+      XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY: d1a66dfd-c4d3-4a0a-8290-2abcb83ab3aa
+      LOGGING_ROOT_LEVEL: error
+    ports:
+      - "5601:5601"
+    mem_limit: 2147483648
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+networks:
+  elk:
+    driver: bridge

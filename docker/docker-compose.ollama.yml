@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama  # Replace with the specific Ollama version if needed
+    container_name: ollama
+    ports:
+      - "11434:11434"  # Expose the port (adjust if your server uses a different port)
+    volumes:
+      - ollama:/root/.ollama
+    restart: always
+
+volumes:
+  ollama:
+
+networks:
+  elk:
+    driver: bridge

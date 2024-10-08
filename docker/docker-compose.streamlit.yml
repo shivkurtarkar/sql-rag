@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  streamlit-app:
+    image: python:3.9-slim
+    container_name: streamlit-app
+    command: >
+      /bin/bash -c "
+      pip install streamlit requests pandas elasticsearch && 
+      streamlit run /app/rag_streamlit_app.py"
+    volumes:
+      - ../app:/app  # Mount your local app folder to the container
+    ports:
+      - "8501:8501"  # Streamlit UI will be available at localhost:8501
+    depends_on:
+      - elasticsearch
+    environment:
+      - PYTHONUNBUFFERED=1
+
+networks:
+  elk:
+    driver: bridge

@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin  # Set admin password
+    volumes:
+      - grafana-data:/var/lib/grafana  # Persist Grafana data
+      - ./data/:/app/data
+    ports:
+      - "3000:3000"  # Map Grafana port to host
+    restart: unless-stopped
+
+volumes:
+  grafana-data:
+
+networks:
+  elk:
+    driver: bridge

@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  elasticsearch:
+    extends:
+      file: docker-compose.elasticsearch.yml
+      service: elasticsearch
+
+  kibana:
+    extends:
+      file: docker-compose.kibana.yml
+      service: kibana
+
+  grafana:
+    extends:
+      file: docker-compose.grafana.yml
+      service: grafana
+
+  # streamlit-app:
+  #   extends:
+  #     file: docker-compose.streamlit.yml
+  #     service: streamlit-app
+
+  ollama:
+    extends:
+      file: docker-compose.ollama.yml
+      service: ollama
+
+networks:
+  elk:
+    driver: bridge
+
+volumes:
+  grafana-data:
+  ollama:
