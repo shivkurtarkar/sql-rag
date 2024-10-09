@@ -94,10 +94,19 @@ evaluate retrival
 python scripts/4_evaluate_retrival.py
 ```
 
+
+
 evaluate rag
+
+set model variable to appropriate model to be used for evaluation
+
 ```bash
-python scripts/5_generate_rag_responses.py
-python scripts/6_evaluate_rag_responses_llm_judge.py
+# download model
+python scripts/5_pull_model.py
+# generate rag outputs
+python scripts/6_generate_rag_responses.py
+# use llm to judge rag outputs
+python scripts/7_evaluate_rag_responses_llm_judge.py
 ```
 
 start application
@@ -107,10 +116,16 @@ pip install -r requirements.txt
 streamlit run rag_streamlit_app.py
 ```
 
+
+## download model from application
+![applicaiton](./images/Screenshot_20241009_225311.png)
+
+
+## run rag inference from application
+![applicaiton](./images/Screenshot_20241009_222756.png)
+
+
 ## Model monitoring Dashboard
 ![dashboard](./images/Screenshot_20241008_200906.png)
 ![dashboard](./images/Screenshot_20241008_200928.png)
 
-
-## applicaiton
-![applicaiton](./images/Screenshot_20241008_200928.png)
