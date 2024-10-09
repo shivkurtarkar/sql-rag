@@ -4,7 +4,6 @@ import json
 import sqlite3
 import uuid
 from datetime import datetime
-from elasticsearch import Elasticsearch
 
 from rag import rag_function
 
