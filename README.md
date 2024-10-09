@@ -129,3 +129,8 @@ streamlit run rag_streamlit_app.py
 ![dashboard](./images/Screenshot_20241008_200906.png)
 ![dashboard](./images/Screenshot_20241008_200928.png)
 
+
+# TODO
+
+- [ ] Adding db metadata as context
+- [ ] Running query on database
