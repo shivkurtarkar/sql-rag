@@ -2,24 +2,16 @@ import pandas as pd
 from elasticsearch import Elasticsearch
 import json
 import tqdm
-from datasets import load_from_disk
+
+from injestion_utils import read_hf_dataset
+
 
 
 # Function to index data into Elasticsearch
 def index_record(es, index_name, doc_id, record):
     es.index(index=index_name, id=doc_id, document=record)
 
-# Reading a Parquet file and displaying its contents
-def read_hf_dataset(file_path):
-    # Load the dataset from local disk
-    try:
-        dataset = load_from_disk(file_path)
-    except Exception as e:
-        print(f"Error loading dataset: {e}")
-        exit(1)
-    # Convert the 'train' split of the dataset to a Pandas DataFrame
-    df = pd.DataFrame(dataset["train"])
-    return df
+
 
 
 if __name__ == '__main__':

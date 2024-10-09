@@ -1,9 +1,10 @@
-from app.rag import search, elastic_search, call_llm
+from rag import search, elastic_search, call_llm
 
 import pandas as pd
 import json
 import tqdm
 
+from injestion_utils import read_hf_dataset
 
 
 # Reading a Parquet file and displaying its contents
@@ -15,9 +16,12 @@ def read_parquet(file_path):
 if __name__ == '__main__':
     
     # Example usage of reading parquet file
-    parquet_file = './data/synthetic_text_to_sql/synthetic_text_to_sql_train.snappy.parquet'  # Replace with your Parquet file path
-    df = read_parquet(parquet_file)
+    # parquet_file = './data/synthetic_text_to_sql/synthetic_text_to_sql_train.snappy.parquet'  # Replace with your Parquet file path
+    # df = read_parquet(parquet_file)
     # print(df)
+
+    dataset_path = './synthetic_text_to_sql_local'  # Replace with your Parquet file path
+    df = read_hf_dataset(dataset_path)
 
     result_count = 0
 

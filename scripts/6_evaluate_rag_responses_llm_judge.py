@@ -16,8 +16,15 @@ def judge_the_response(query, response, judge_model):
 
 if __name__ == '__main__':
     
-    # Load the RAG responses from CSV
-    rag_responses_file = 'rag_responses.csv'
+    ## select model to use as a judge
+    # model = "deepseek-coder-v2:16b"
+    model = "llama3.2:1b"
+    # model = "llama3.2:latest"
+    # model = "qwen2:1.5b"
+    # model = "phi3.5:latest"
+
+    # Load the RAG responses from CSV        
+    rag_responses_file = f'../output/rag_responses_{model}.csv'
     df = pd.read_csv(rag_responses_file)
 
     judge_model = "deepseek-coder-v2:16b"

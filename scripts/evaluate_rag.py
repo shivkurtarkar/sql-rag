@@ -1,4 +1,4 @@
-from app.rag import rag_function, call_llm
+from rag import rag_function, call_llm
 
 import pandas as pd
 import json

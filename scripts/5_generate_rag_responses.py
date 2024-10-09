@@ -4,7 +4,8 @@ import pandas as pd
 import json
 import tqdm
 
-from app.rag import rag_function
+from rag import rag_function
+from injestion_utils import read_hf_dataset
 
 # Reading a Parquet file and displaying its contents
 def read_parquet(file_path):
@@ -14,9 +15,15 @@ def read_parquet(file_path):
 if __name__ == '__main__':
     
     # Example usage of reading parquet file
-    parquet_file = './data/synthetic_text_to_sql/synthetic_text_to_sql_train.snappy.parquet'  # Replace with your Parquet file path
-    df = read_parquet(parquet_file)
+    # parquet_file = './data/synthetic_text_to_sql/synthetic_text_to_sql_train.snappy.parquet'  # Replace with your Parquet file path
+    # df = read_parquet(parquet_file)
+
+    dataset_path = './synthetic_text_to_sql_local'  # Replace with your Parquet file path
+    df = read_hf_dataset(dataset_path)
+
     df = df[:1000]
+
+    ## select model to use as in rag
     # model = "deepseek-coder-v2:16b"
     model = "llama3.2:1b"
     # model = "llama3.2:latest"
@@ -49,5 +56,5 @@ if __name__ == '__main__':
 
     # Save the RAG responses to a CSV file
     output_df = pd.DataFrame(output_data)
-    output_df.to_csv(f'rag_responses_{model}.csv', index=False)
+    output_df.to_csv(f'../output/rag_responses_{model}.csv', index=False)
     print("RAG responses saved to rag_responses.csv")
