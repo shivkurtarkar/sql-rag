@@ -87,7 +87,7 @@
     {
       "datasource": {
         "type": "frser-sqlite-datasource",
-        "uid": "${DS_SQLITE}"
+        "uid": "DS_SQLITE"
       },
       "fieldConfig": {
         "defaults": {
@@ -164,7 +164,7 @@
         {
           "datasource": {
             "type": "frser-sqlite-datasource",
-            "uid": "${DS_SQLITE}"
+            "uid": "DS_SQLITE"
           },
           "queryText": "SELECT \n  model_name, \n  count(*) response_counts \nfrom requests\ngroup by model_name\n    ",
           "queryType": "table",
@@ -182,7 +182,7 @@
     {
       "datasource": {
         "type": "frser-sqlite-datasource",
-        "uid": "${DS_SQLITE}"
+        "uid": "DS_SQLITE"
       },
       "fieldConfig": {
         "defaults": {
@@ -258,7 +258,7 @@
         {
           "datasource": {
             "type": "frser-sqlite-datasource",
-            "uid": "${DS_SQLITE}"
+            "uid": "DS_SQLITE"
           },
           "hide": false,
           "queryText": "SELECT \n    feedback, \n    COUNT(*) AS count\nFROM \n    feedback\nGROUP BY \n    feedback;",
@@ -277,7 +277,7 @@
     {
       "datasource": {
         "type": "frser-sqlite-datasource",
-        "uid": "${DS_SQLITE}"
+        "uid": "DS_SQLITE"
       },
       "fieldConfig": {
         "defaults": {
@@ -337,7 +337,7 @@
         {
           "datasource": {
             "type": "frser-sqlite-datasource",
-            "uid": "${DS_SQLITE}"
+            "uid": "DS_SQLITE"
           },
           "queryText": "SELECT query, response, model_name from requests\n    ",
           "queryType": "table",
@@ -368,7 +368,7 @@
     {
       "datasource": {
         "type": "frser-sqlite-datasource",
-        "uid": "${DS_SQLITE}"
+        "uid": "DS_SQLITE"
       },
       "fieldConfig": {
         "defaults": {
@@ -446,7 +446,7 @@
         {
           "datasource": {
             "type": "frser-sqlite-datasource",
-            "uid": "${DS_SQLITE}"
+            "uid": "DS_SQLITE"
           },
           "queryText": "SELECT \nUNIXEPOCH(strftime('%Y-%m-%d %H:%M:00', created_at)) AS time,\navg(prompt_length)\nFROM performance_metrics\ngroup by time\norder by time\n",
           "queryType": "table",
@@ -464,7 +464,7 @@
     {
       "datasource": {
         "type": "frser-sqlite-datasource",
-        "uid": "${DS_SQLITE}"
+        "uid": "DS_SQLITE"
       },
       "fieldConfig": {
         "defaults": {
@@ -542,7 +542,7 @@
         {
           "datasource": {
             "type": "frser-sqlite-datasource",
-            "uid": "${DS_SQLITE}"
+            "uid": "DS_SQLITE"
           },
           "queryText": "SELECT\n  UNIXEPOCH(strftime('%Y-%m-%d %H:%M:00', created_at)) AS time,\n  avg(eval_count)\nFROM performance_metrics\nGroup by time\n",
           "queryType": "table",
@@ -560,7 +560,7 @@
     {
       "datasource": {
         "type": "frser-sqlite-datasource",
-        "uid": "${DS_SQLITE}"
+        "uid": "DS_SQLITE"
       },
       "fieldConfig": {
         "defaults": {
@@ -638,7 +638,7 @@
         {
           "datasource": {
             "type": "frser-sqlite-datasource",
-            "uid": "${DS_SQLITE}"
+            "uid": "DS_SQLITE"
           },
           "queryText": "SELECT \n  UNIXEPOCH(strftime('%Y-%m-%d %H:%M:00', created_at)) AS time,\n  avg(total_duration), \n  avg(load_duration), \n  avg(prompt_eval_duration), \n  avg(eval_duration)\nFROM performance_metrics\ngroup by time\norder by time asc\n",
           "queryType": "table",
@@ -656,7 +656,7 @@
     {
       "datasource": {
         "type": "frser-sqlite-datasource",
-        "uid": "${DS_SQLITE}"
+        "uid": "DS_SQLITE"
       },
       "fieldConfig": {
         "defaults": {
@@ -733,7 +733,7 @@
         {
           "datasource": {
             "type": "frser-sqlite-datasource",
-            "uid": "${DS_SQLITE}"
+            "uid": "DS_SQLITE"
           },
           "queryText": "SELECT \n  UNIXEPOCH(strftime('%Y-%m-%d %H:%M:00', created_at)) AS time,\n  model_name,\n  COUNT(*) AS count\nFROM requests \nGROUP BY time, model_name\nORDER BY time, model_name;",
           "queryType": "table",
@@ -761,7 +761,7 @@
     {
       "datasource": {
         "type": "frser-sqlite-datasource",
-        "uid": "${DS_SQLITE}"
+        "uid": "DS_SQLITE"
       },
       "fieldConfig": {
         "defaults": {
@@ -814,7 +814,7 @@
         {
           "datasource": {
             "type": "frser-sqlite-datasource",
-            "uid": "${DS_SQLITE}"
+            "uid": "DS_SQLITE"
           },
           "queryText": "SELECT performance_metrics.*, requests.*\nFROM performance_metrics\nJOIN requests ON performance_metrics.request_id = requests.id;\n",
           "queryType": "table",
@@ -841,7 +841,7 @@
         "current": {},
         "datasource": {
           "type": "frser-sqlite-datasource",
-          "uid": "${DS_SQLITE}"
+          "uid": "DS_SQLITE"
         },
         "definition": "select model_name from requests",
         "hide": 0,
@@ -864,7 +864,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "model_stats0",
+  "title": "model_stats",
   "uid": "baqQiHzNz",
   "version": 40,
   "weekStart": ""

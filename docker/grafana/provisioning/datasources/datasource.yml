@@ -8,4 +8,3 @@ datasources:
     isDefault: true
     jsonData:
       path: /app/data/feedback.db
-      
